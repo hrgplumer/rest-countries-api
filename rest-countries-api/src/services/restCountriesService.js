@@ -14,12 +14,20 @@ const apiUrlReducer = (api, endpoint, options = '') => {
 }
 
 export const getAllCountries = async (apiUrl = REST_COUNTRIES_API) => {
+    return getApiData(apiUrl, 'ALL');
+}
+
+export const getAllRegions = async (apiUrl = REST_COUNTRIES_API) => {
+    return getApiData(apiUrl, 'REGION');
+}
+
+const getApiData = async (apiUrl = REST_COUNTRIES_API, endpoint) => {
     try {
-        const url = apiUrlReducer(apiUrl, 'ALL');
-        const countriesBlob = await fetch(url, {
+        const url = apiUrlReducer(apiUrl, endpoint);
+        const dataBlob = await fetch(url, {
             method: 'GET'
         });
-        const data = await countriesBlob.json();
+        const data = await dataBlob.json();
         return data;
     } catch (error) {
         console.trace(error);

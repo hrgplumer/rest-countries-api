@@ -5,7 +5,7 @@ import { getAllCountries } from './services/restCountriesService';
 
 afterEach(cleanup);
 
-test('renders learn react link', () => {
+test('renders Countries component', () => {
   const { getByText } = render(<App />);
   const linkElement = getByText(/Countries/i);
   expect(linkElement).toBeInTheDocument();
