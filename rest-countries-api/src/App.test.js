@@ -1,9 +1,18 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, act, cleanup } from '@testing-library/react';
 import App from './App';
+import { getAllCountries } from './services/restCountriesService';
+
+afterEach(cleanup);
 
 test('renders learn react link', () => {
   const { getByText } = render(<App />);
-  const linkElement = getByText(/learn react/i);
+  const linkElement = getByText(/Countries/i);
   expect(linkElement).toBeInTheDocument();
+});
+
+test('api get all countries', async () => {
+  const countries = await getAllCountries();
+  expect(countries).toBeTruthy();
+  expect(countries).toHaveLength(250);
 });
