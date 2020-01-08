@@ -1,3 +1,5 @@
+$site-vertical-margins: 50px;
+
 :root,
 html,
 body {
@@ -6,4 +8,8 @@ body {
 	margin: 0;
 	padding: 0;
 	font-family: 'Nunito Sans', sans-serif;
+}
+
+.container {
+	padding: 0 $site-vertical-margins;
 }

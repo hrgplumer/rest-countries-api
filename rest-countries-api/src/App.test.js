@@ -7,7 +7,7 @@ afterEach(cleanup);
 
 test('renders Countries component', () => {
   const { getByText } = render(<App />);
-  const linkElement = getByText(/Countries/i);
+  const linkElement = getByText(/Where in the world/i);
   expect(linkElement).toBeInTheDocument();
 });
 

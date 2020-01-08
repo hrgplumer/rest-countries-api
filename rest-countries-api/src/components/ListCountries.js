@@ -29,10 +29,9 @@ const ListCountries = () => {
     ));
 
     return (
-        <div>
-            <h1>Countries</h1>
+        <section className="countries-list">
             {countryComponents}
-        </div>
+        </section>
     )
 }
 

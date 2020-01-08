@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import '../assets/country.scss';
 
 const Country = ({ countryObject }) => {
-    const [country, setCountry] = useState(countryObject);
+    const [country] = useState(countryObject);
 
     return (
         <div key={country.numericCode}>

@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMoon } from '@fortawesome/free-solid-svg-icons';
 
 const Header = ({ mode }) => {
-    const [theme, setTheme] = useState(mode);
+    const [theme] = useState(mode);
 
     return (
         <header className="site-header">
