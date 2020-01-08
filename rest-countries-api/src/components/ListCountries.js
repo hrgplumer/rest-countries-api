@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { getAllCountries } from '../services/restCountriesService';
+import Country from './Country';
 
-const Countries = () => {
+const ListCountries = () => {
     const [countries, setCountries] = useState([]);
 
     useEffect(() => {
@@ -23,23 +24,16 @@ const Countries = () => {
             .then(setCountries);
     }, [countries]);
 
-    const countryData = countries.map(c => (
-        <div key={c.numericCode}>
-            <h2>{c.name}</h2>
-            <ul>
-                <li>Capital: {c.capital}</li>
-                <li>Region: {c.region}</li>
-                <li>Population: {c.population}</li>
-            </ul>
-        </div>
+    const countryComponents = countries.map(c => (
+        <Country countryObject={c} />
     ));
 
     return (
         <div>
             <h1>Countries</h1>
-            {countryData}
+            {countryComponents}
         </div>
     )
 }
 
-export default Countries;
+export default ListCountries;
