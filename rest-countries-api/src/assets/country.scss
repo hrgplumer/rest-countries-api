@@ -1,0 +1,26 @@
+.country {
+	grid-column: span 1;
+	justify-self: center;
+	align-self: center;
+	width: 100%;
+	padding: 10px;
+
+	ul.country-specs {
+		list-style-type: none;
+		padding: 0;
+	}
+
+	.flag-cover {
+		width: 100%;
+		position: relative;
+		background-size: cover;
+		background-clip: content-box;
+		//background: 100% 100% no-repeat;
+	}
+
+	.flag-cover:before {
+		display: block;
+		content: '';
+		padding-top: 250px;
+	}
+}

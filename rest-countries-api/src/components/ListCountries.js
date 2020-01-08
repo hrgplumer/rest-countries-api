@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { getAllCountries } from '../services/restCountriesService';
 import Country from './Country';
+import '../assets/listCountries.scss';
 
 const ListCountries = () => {
     const [countries, setCountries] = useState([]);
