@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import '../assets/country.scss';
 
 const Country = ({ countryObject }) => {
     const [country, setCountry] = useState(countryObject);
@@ -10,7 +11,6 @@ const Country = ({ countryObject }) => {
                 <li>Capital: {country.capital}</li>
                 <li>Region: {country.region}</li>
                 <li>Population: {country.population}</li>
-                <li>Penis juice</li>
             </ul>
         </div>
     );
