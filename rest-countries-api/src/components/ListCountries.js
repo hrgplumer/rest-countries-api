@@ -26,7 +26,7 @@ const ListCountries = () => {
     }, [countries]);
 
     const countryComponents = countries.map(c => (
-        <Country countryObject={c} />
+        <Country key={c.numericCode} countryObject={c} />
     ));
 
     return (

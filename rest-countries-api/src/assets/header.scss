@@ -1,9 +1,9 @@
-@import './App.scss';
+@import './globals.scss';
 
 header.site-header {
 	width: 100%;
 	height: 10vh;
-	background-color: hsl(209, 23%, 22%);
+	background-color: $site-element-background-color;
 	display: flex;
 	flex-direction: row;
 	align-items: center;

@@ -1,9 +1,9 @@
-$site-vertical-margins: 50px;
+@import './globals.scss';
 
 :root,
 html,
 body {
-	background-color: hsl(207, 26%, 17%);
+	background-color: $site-background-color;
 	color: hsl(0, 0%, 100%);
 	margin: 0;
 	padding: 0;
