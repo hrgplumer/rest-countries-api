@@ -1,9 +1,11 @@
+@import './globals.scss';
+
 .country {
 	grid-column: span 1;
 	justify-self: center;
 	align-self: center;
 	width: 100%;
-	padding: 10px;
+	background-color: $site-element-background-color;
 
 	ul.country-specs {
 		list-style-type: none;
@@ -15,12 +17,21 @@
 		position: relative;
 		background-size: cover;
 		background-clip: content-box;
-		//background: 100% 100% no-repeat;
 	}
 
 	.flag-cover:before {
 		display: block;
 		content: '';
 		padding-top: 250px;
+	}
+
+	.country-detail {
+		display: flex;
+		flex-direction: column;
+		padding: 0 20px;
+
+		h2 {
+			margin-bottom: 0;
+		}
 	}
 }
