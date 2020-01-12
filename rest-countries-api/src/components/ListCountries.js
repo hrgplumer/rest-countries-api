@@ -3,6 +3,7 @@ import { getAllCountries } from '../services/restCountriesService';
 import { mapCountry } from '../helpers/countryHelper';
 import Country from './Country';
 import '../assets/listCountries.scss';
+import { LazyLoadComponent } from 'react-lazy-load-image-component';
 
 const ListCountries = () => {
     const [countries, setCountries] = useState([]);
@@ -14,7 +15,9 @@ const ListCountries = () => {
     }, []);
 
     const countryComponents = countries.map(c => (
-        <Country key={c.numericCode} countryObject={c} />
+        <LazyLoadComponent>
+            <Country key={c.numericCode} countryObject={c} />
+        </LazyLoadComponent>
     ));
 
     return (
