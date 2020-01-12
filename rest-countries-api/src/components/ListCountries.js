@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { getAllCountries } from '../services/restCountriesService';
+import { mapCountry } from '../helpers/countryHelper';
 import Country from './Country';
 import '../assets/listCountries.scss';
 
@@ -8,22 +9,9 @@ const ListCountries = () => {
 
     useEffect(() => {
         getAllCountries()
-            .then(countries => countries.map(c => {
-                return {
-                    numericCode: c.numericCode,
-                    name: c.name,
-                    capital: c.capital,
-                    region: c.region,
-                    subregion: c.subregion,
-                    population: c.population,
-                    borders: c.borders,
-                    flag: c.flag,
-                    regionalBlocs: c.regionalBlocs,
-                    cioc: c.cioc
-                };
-            }))
+            .then(countries => countries.map(c => mapCountry(c)))
             .then(setCountries);
-    }, [countries]);
+    }, []);
 
     const countryComponents = countries.map(c => (
         <Country key={c.numericCode} countryObject={c} />
